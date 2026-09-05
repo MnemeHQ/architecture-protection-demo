@@ -1,0 +1,92 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - run: npm ci
+      - run: npm test
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - run: npm ci
+      - run: npm run lint
+
+  architecture-boundary:
+    name: Architecture Boundary Check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Check persistence boundary (no pg/postgres in domain/api)
+        run: |
+          echo "Checking for direct database access in domain/api..."
+          if grep -r "from 'pg'" src/domain src/api 2>/dev/null; then
+            echo "FAIL: Direct 'pg' import found in domain/api"
+            exit 1
+          fi
+          if grep -r "from \"pg\"" src/domain src/api 2>/dev/null; then
+            echo "FAIL: Direct \"pg\" import found in domain/api"
+            exit 1
+          fi
+          if grep -r "require('pg')" src/domain src/api 2>/dev/null; then
+            echo "FAIL: Direct require('pg') found in domain/api"
+            exit 1
+          fi
+          if grep -r "require(\"pg\")" src/domain src/api 2>/dev/null; then
+            echo "FAIL: Direct require(\"pg\") found in domain/api"
+            exit 1
+          fi
+          if grep -r "postgres" src/domain src/api --include="*.ts" 2>/dev/null | grep -v ".d.ts" | grep -v "// "; then
+            echo "FAIL: Direct 'postgres' reference found in domain/api"
+            exit 1
+          fi
+          echo "PASS: Persistence boundary respected"
+
+      - name: Check payment boundary (no stripe in domain)
+        run: |
+          echo "Checking for direct Stripe access in domain..."
+          if grep -r "from 'stripe'" src/domain 2>/dev/null; then
+            echo "WARN: Direct 'stripe' import found in domain (protection gap - ADR-002)"
+          fi
+          if grep -r "from \"stripe\"" src/domain 2>/dev/null; then
+            echo "WARN: Direct \"stripe\" import found in domain (protection gap - ADR-002)"
+          fi
+          if grep -r "require('stripe')" src/domain 2>/dev/null; then
+            echo "WARN: Direct require('stripe') found in domain (protection gap - ADR-002)"
+          fi
+          if grep -r "require(\"stripe\")" src/domain 2>/dev/null; then
+            echo "WARN: Direct require(\"stripe\") found in domain (protection gap - ADR-002)"
+          fi
+          echo "Note: Payment boundary not yet mechanically enforced (ADR-002)"
+
+      - name: Check HTTP boundary (no http in workers)
+        run: |
+          echo "Checking for HTTP handlers in workers..."
+          if grep -r "express" src/workers --include="*.ts" 2>/dev/null | grep -v ".d.ts" | grep -v "// "; then
+            echo "WARN: Express import found in workers (protection gap - ADR-003)"
+          fi
+          if grep -r "fastify" src/workers --include="*.ts" 2>/dev/null | grep -v ".d.ts" | grep -v "// "; then
+            echo "WARN: Fastify import found in workers (protection gap - ADR-003)"
+          fi
+          if grep -r "createServer" src/workers --include="*.ts" 2>/dev/null | grep -v ".d.ts" | grep -v "// "; then
+            echo "WARN: HTTP server creation found in workers (protection gap - ADR-003)"
+          fi
+          echo "Note: HTTP boundary not yet mechanically enforced (ADR-003)"
