@@ -34,4 +34,3 @@ Key decisions are recorded in `docs/adr/`:
 - Database clients belong in repository implementations
 - Payment SDKs belong in the payment adapter
 - Web framework imports belong in API routes
-- Workers use only domain logic, no web frameworks
