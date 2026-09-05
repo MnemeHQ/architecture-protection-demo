@@ -4,7 +4,7 @@ title: Predictable API Responses
 status: accepted
 priority: normal
 date: 2026-01-15
-scope: api
+scope: api.responses
 ---
 
 # ADR-011: Predictable API Responses
