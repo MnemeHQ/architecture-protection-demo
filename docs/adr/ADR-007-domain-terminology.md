@@ -1,8 +1,10 @@
 ---
 id: ADR-007
 title: Explicit Domain Terminology
-status: Active
+status: accepted
+priority: normal
 date: 2026-01-15
+scope: naming
 ---
 
 # ADR-007: Explicit Domain Terminology

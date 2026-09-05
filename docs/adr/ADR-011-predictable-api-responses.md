@@ -1,8 +1,10 @@
 ---
 id: ADR-011
 title: Predictable API Responses
-status: Active
+status: accepted
+priority: normal
 date: 2026-01-15
+scope: api
 ---
 
 # ADR-011: Predictable API Responses

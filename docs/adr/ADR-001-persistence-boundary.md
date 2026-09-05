@@ -1,8 +1,10 @@
 ---
 id: ADR-001
 title: Persistence Boundary
-status: Active
+status: accepted
+priority: foundational
 date: 2026-01-15
+scope: storage
 ---
 
 # ADR-001: Persistence Boundary

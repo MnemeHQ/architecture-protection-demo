@@ -1,8 +1,10 @@
 ---
 id: ADR-008
 title: Idempotent Background Jobs
-status: Active
+status: accepted
+priority: normal
 date: 2026-01-15
+scope: workers
 ---
 
 # ADR-008: Idempotent Background Jobs

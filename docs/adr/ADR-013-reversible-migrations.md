@@ -1,8 +1,10 @@
 ---
 id: ADR-013
 title: Reversible Migrations
-status: Active
+status: accepted
+priority: normal
 date: 2026-01-15
+scope: database
 ---
 
 # ADR-013: Reversible Migrations

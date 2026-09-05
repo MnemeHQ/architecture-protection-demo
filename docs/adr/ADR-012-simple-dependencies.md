@@ -1,8 +1,10 @@
 ---
 id: ADR-012
 title: Favour Simple Dependencies
-status: Active
+status: accepted
+priority: normal
 date: 2026-01-15
+scope: dependencies
 ---
 
 # ADR-012: Favour Simple Dependencies

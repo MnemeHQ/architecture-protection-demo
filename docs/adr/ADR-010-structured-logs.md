@@ -1,8 +1,10 @@
 ---
 id: ADR-010
 title: Structured Logs
-status: Active
+status: accepted
+priority: normal
 date: 2026-01-15
+scope: observability
 ---
 
 # ADR-010: Structured Logs

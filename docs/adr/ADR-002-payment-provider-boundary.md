@@ -1,8 +1,10 @@
 ---
 id: ADR-002
 title: Payment Provider Boundary
-status: Active
+status: accepted
+priority: normal
 date: 2026-01-15
+scope: payments
 ---
 
 # ADR-002: Payment Provider Boundary

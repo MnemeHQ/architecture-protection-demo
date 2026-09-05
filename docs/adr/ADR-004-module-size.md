@@ -1,8 +1,10 @@
 ---
 id: ADR-004
 title: Prefer Small Modules
-status: Active
+status: accepted
+priority: normal
 date: 2026-01-15
+scope: code-style
 ---
 
 # ADR-004: Prefer Small Modules

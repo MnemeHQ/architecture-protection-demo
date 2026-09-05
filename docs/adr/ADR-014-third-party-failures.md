@@ -1,8 +1,10 @@
 ---
 id: ADR-014
 title: Document Third-Party Failure Modes
-status: Active
+status: accepted
+priority: normal
 date: 2026-01-15
+scope: integrations
 ---
 
 # ADR-014: Document Third-Party Failure Modes

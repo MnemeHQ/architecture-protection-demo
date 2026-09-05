@@ -1,8 +1,10 @@
 ---
 id: ADR-006
 title: Document Externally Visible Behavior
-status: Active
+status: accepted
+priority: normal
 date: 2026-01-15
+scope: documentation
 ---
 
 # ADR-006: Document Externally Visible Behavior

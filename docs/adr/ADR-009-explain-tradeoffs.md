@@ -1,8 +1,10 @@
 ---
 id: ADR-009
 title: Explain Trade-offs in ADRs
-status: Active
+status: accepted
+priority: normal
 date: 2026-01-15
+scope: documentation
 ---
 
 # ADR-009: Explain Trade-offs in ADRs

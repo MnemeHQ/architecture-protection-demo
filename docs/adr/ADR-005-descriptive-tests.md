@@ -1,8 +1,10 @@
 ---
 id: ADR-005
 title: Descriptive Tests
-status: Active
+status: accepted
+priority: normal
 date: 2026-01-15
+scope: testing
 ---
 
 # ADR-005: Descriptive Tests

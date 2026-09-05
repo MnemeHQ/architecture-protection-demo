@@ -1,8 +1,10 @@
 ---
 id: ADR-003
 title: HTTP/API Boundary
-status: Active
+status: accepted
+priority: normal
 date: 2026-01-15
+scope: api
 ---
 
 # ADR-003: HTTP/API Boundary
