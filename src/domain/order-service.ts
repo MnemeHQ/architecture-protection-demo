@@ -53,6 +53,16 @@ export class Order {
     return new Order(crypto.randomUUID(), customerId, items, total);
   }
 
+  static fromPersistence(
+    id: string,
+    customerId: string,
+    items: OrderItem[],
+    total: number,
+    status: 'pending' | 'paid' | 'cancelled'
+  ): Order {
+    return new Order(id, customerId, items, total, status);
+  }
+
   markPaid(): void {
     this.status = 'paid';
   }

@@ -1,19 +1,9 @@
+import { Order as OrderClass, OrderItem } from '../domain/order-service';
+
 export interface OrderRepository {
-  save(order: Order): Promise<void>;
-  findById(id: string): Promise<Order | null>;
-  findByCustomer(customerId: string): Promise<Order[]>;
+  save(order: OrderClass): Promise<void>;
+  findById(id: string): Promise<OrderClass | null>;
+  findByCustomer(customerId: string): Promise<OrderClass[]>;
 }
 
-export interface Order {
-  id: string;
-  customerId: string;
-  items: OrderItem[];
-  total: number;
-  status: 'pending' | 'paid' | 'cancelled';
-}
-
-export interface OrderItem {
-  productId: string;
-  quantity: number;
-  unitPrice: number;
-}
+export { OrderClass as Order, OrderItem };

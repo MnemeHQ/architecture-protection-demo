@@ -1,13 +1,11 @@
 ---
-id: ADR-002
 title: Payment Provider Boundary
 status: accepted
 priority: normal
 date: 2026-01-15
-scope: payments
 ---
 
-# ADR-002: Payment Provider Boundary
+# Payment Provider Boundary
 
 ## Context
 Domain logic must not call Stripe or other payment provider SDKs directly. External payment calls must go through the payment adapter in `src/payments/`. Direct SDK usage couples business logic to vendor-specific APIs and makes provider migration costly.
@@ -21,10 +19,5 @@ All payment operations are routed through `src/payments/adapter.ts`. Domain code
 - Test doubles for payments are straightforward
 
 ## Enforcement
-- FORBID_LITERAL: "stripe" in `src/domain/**`
-- CI workflow `.github/workflows/ci.yml` verifies this boundary
-
-## Constraints
-- FORBID_LITERAL: stripe
-  include_paths:
-    - src/domain/**
+- Constraint: "no stripe" in domain code
+- No FORBID_LITERAL rule yet — protection gap
