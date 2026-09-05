@@ -4,7 +4,7 @@ title: Document Third-Party Failure Modes
 status: accepted
 priority: normal
 date: 2026-01-15
-scope: integrations
+scope: ext
 ---
 
 # ADR-014: Document Third-Party Failure Modes

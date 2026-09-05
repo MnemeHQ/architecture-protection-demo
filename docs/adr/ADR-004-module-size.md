@@ -4,7 +4,7 @@ title: Prefer Small Modules
 status: accepted
 priority: normal
 date: 2026-01-15
-scope: code-style
+scope: code_style
 ---
 
 # ADR-004: Prefer Small Modules

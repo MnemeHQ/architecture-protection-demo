@@ -4,7 +4,7 @@ title: Explain Trade-offs in ADRs
 status: accepted
 priority: normal
 date: 2026-01-15
-scope: documentation
+scope: docs
 ---
 
 # ADR-009: Explain Trade-offs in ADRs

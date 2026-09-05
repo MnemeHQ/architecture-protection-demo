@@ -4,7 +4,7 @@ title: Favour Simple Dependencies
 status: accepted
 priority: normal
 date: 2026-01-15
-scope: dependencies
+scope: deps
 ---
 
 # ADR-012: Favour Simple Dependencies

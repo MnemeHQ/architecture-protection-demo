@@ -4,7 +4,7 @@ title: Document Externally Visible Behavior
 status: accepted
 priority: normal
 date: 2026-01-15
-scope: documentation
+scope: docs
 ---
 
 # ADR-006: Document Externally Visible Behavior
