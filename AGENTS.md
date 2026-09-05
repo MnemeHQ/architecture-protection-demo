@@ -31,7 +31,7 @@ Key decisions are recorded in `docs/adr/`:
 ## Conventions
 
 - Domain code: pure TypeScript, no framework imports
-- Repository implementations: only place for database client imports
-- Payment adapter: only place for payment SDK imports
-- API routes: only place for web framework imports
-- Workers: no web framework or HTTP server imports
+- Database clients belong in repository implementations
+- Payment SDKs belong in the payment adapter
+- Web framework imports belong in API routes
+- Workers avoid web frameworks and HTTP servers
