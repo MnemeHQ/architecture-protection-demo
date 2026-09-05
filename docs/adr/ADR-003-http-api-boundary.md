@@ -23,3 +23,6 @@ HTTP route registration and middleware live in `src/api/`. Worker processes impo
 ## Enforcement
 - Constraint: "no http" in worker code
 - No FORBID_LITERAL rule yet — protection gap
+
+## Constraints
+- no http

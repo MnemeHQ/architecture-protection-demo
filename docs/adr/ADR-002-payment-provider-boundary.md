@@ -23,3 +23,6 @@ All payment operations are routed through `src/payments/adapter.ts`. Domain code
 ## Enforcement
 - Constraint: "no stripe" in domain code
 - No FORBID_LITERAL rule yet — protection gap
+
+## Constraints
+- no stripe

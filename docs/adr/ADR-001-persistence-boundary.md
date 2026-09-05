@@ -24,3 +24,13 @@ All database access goes through the repository layer in `src/repositories/`. Do
 - FORBID_LITERAL: "pg" in `src/domain/**` and `src/api/**`
 - FORBID_LITERAL: "postgres" in `src/domain/**` and `src/api/**`
 - CI workflow `.github/workflows/ci.yml` verifies this boundary
+
+## Constraints
+- FORBID_LITERAL: pg
+  include_paths:
+    - src/domain/**
+    - src/api/**
+- FORBID_LITERAL: postgres
+  include_paths:
+    - src/domain/**
+    - src/api/**
