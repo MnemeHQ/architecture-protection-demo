@@ -12,7 +12,7 @@ This is a small TypeScript service demonstrating architectural boundaries:
 - **src/payments/** — Payment provider abstraction (PaymentAdapter + StripeAdapter)
 - **src/workers/** — Background job processors
 
-## Architectural Decisions (ADRs)
+## Architectural Decisions
 
 Key decisions are recorded in `docs/adr/`:
 
@@ -30,8 +30,8 @@ Key decisions are recorded in `docs/adr/`:
 
 ## Conventions
 
-- Domain code: pure TypeScript, no framework imports
+- Domain code uses pure TypeScript
 - Database clients belong in repository implementations
 - Payment SDKs belong in the payment adapter
 - Web framework imports belong in API routes
-- Workers avoid web frameworks and HTTP servers
+- Workers use only domain logic, no web frameworks
