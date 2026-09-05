@@ -16,9 +16,9 @@ This is a small TypeScript service demonstrating architectural boundaries:
 
 Key decisions are recorded in `docs/adr/`:
 
-- **ADR-001** (Protected): Persistence boundary — domain/api must not import `pg` or `postgres` directly. Enforced by CI.
-- **ADR-002** (Ready to Protect): Payment provider boundary — domain must not import `stripe` directly. Not yet mechanically enforced.
-- **ADR-003** (Ready to Protect): HTTP/API boundary — workers must not register HTTP handlers. Not yet mechanically enforced.
+- **ADR-001** (Protected): Persistence boundary — domain/api code accesses PostgreSQL through the repository layer. Enforced by CI.
+- **ADR-002** (Ready to Protect): Payment provider boundary — domain logic routes payments through the adapter. Not yet mechanically enforced.
+- **ADR-003** (Ready to Protect): HTTP/API boundary — workers do not expose HTTP handlers. Not yet mechanically enforced.
 - **ADR-004–014** (Guidance): Development principles (module size, test naming, documentation, etc.) — not mechanically enforced.
 
 ## Enforcement
@@ -31,7 +31,7 @@ Key decisions are recorded in `docs/adr/`:
 ## Conventions
 
 - Domain code: pure TypeScript, no framework imports
-- Repository implementations: only place for `pg` imports
-- Payment adapter: only place for `stripe` imports
-- API routes: only place for `express` imports
-- Workers: no `express`, `fastify`, or HTTP server imports
+- Repository implementations: only place for database client imports
+- Payment adapter: only place for payment SDK imports
+- API routes: only place for web framework imports
+- Workers: no web framework or HTTP server imports
