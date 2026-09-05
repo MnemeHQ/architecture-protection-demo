@@ -18,7 +18,7 @@ Key decisions are recorded in `docs/adr/`:
 
 - **ADR-001** (Protected): Persistence boundary — domain/api code accesses PostgreSQL through the repository layer. Enforced by CI.
 - **ADR-002** (Ready to Protect): Payment provider boundary — domain logic routes payments through the adapter. Not yet mechanically enforced.
-- **ADR-003** (Ready to Protect): HTTP/API boundary — workers do not expose HTTP handlers. Not yet mechanically enforced.
+- **ADR-003** (Ready to Protect): HTTP/API boundary — workers handle HTTP through the API layer. Not yet mechanically enforced.
 - **ADR-004–014** (Guidance): Development principles (module size, test naming, documentation, etc.) — not mechanically enforced.
 
 ## Enforcement
