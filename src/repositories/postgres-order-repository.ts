@@ -54,13 +54,13 @@ export class PostgresOrderRepository implements OrderRepository {
         unitPrice: Number(r.unit_price)
       }));
     
-    return {
-      id: result.rows[0].id,
-      customerId: result.rows[0].customer_id,
-      total: Number(result.rows[0].total),
-      status: result.rows[0].status,
-      items
-    };
+    return Order.fromPersistence(
+      result.rows[0].id,
+      result.rows[0].customer_id,
+      items,
+      Number(result.rows[0].total),
+      result.rows[0].status
+    );
   }
 
   async findByCustomer(customerId: string): Promise<Order[]> {
@@ -78,13 +78,13 @@ export class PostgresOrderRepository implements OrderRepository {
     for (const row of result.rows) {
       let order = ordersMap.get(row.id);
       if (!order) {
-        order = {
-          id: row.id,
-          customerId: row.customer_id,
-          total: Number(row.total),
-          status: row.status,
-          items: []
-        };
+        order = Order.fromPersistence(
+          row.id,
+          row.customer_id,
+          [],
+          Number(row.total),
+          row.status
+        );
         ordersMap.set(row.id, order);
       }
       if (row.product_id) {

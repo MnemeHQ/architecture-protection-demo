@@ -60,9 +60,9 @@ export class StripeAdapter implements PaymentAdapter {
             error: pi.last_payment_error?.message ?? 'Unknown error',
           };
         }
-        case 'refund.succeeded': {
-          const refund = event.data.object as Stripe.Refund;
-          return { type: 'refund.succeeded', refundId: refund.id };
+        case 'charge.refunded': {
+          const charge = event.data.object as Stripe.Charge;
+          return { type: 'refund.succeeded', refundId: charge.id };
         }
         default:
           return null;
