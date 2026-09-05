@@ -1,7 +1,11 @@
-# ADR-013: Reversible Migrations
+---
+id: ADR-013
+title: Reversible Migrations
+status: Active
+date: 2026-01-15
+---
 
-## Status
-Active
+# ADR-013: Reversible Migrations
 
 ## Context
 Irreversible schema changes block rollback and increase deployment risk. Every migration should have a down path.

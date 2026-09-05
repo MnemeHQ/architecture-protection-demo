@@ -1,7 +1,11 @@
-# ADR-005: Descriptive Tests
+---
+id: ADR-005
+title: Descriptive Tests
+status: Active
+date: 2026-01-15
+---
 
-## Status
-Active
+# ADR-005: Descriptive Tests
 
 ## Context
 Tests should read like specifications. Vague test names like "test save" don't communicate intent.

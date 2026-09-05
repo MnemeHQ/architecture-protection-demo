@@ -1,7 +1,11 @@
-# ADR-003: HTTP/API Boundary
+---
+id: ADR-003
+title: HTTP/API Boundary
+status: Active
+date: 2026-01-15
+---
 
-## Status
-Active
+# ADR-003: HTTP/API Boundary
 
 ## Context
 New HTTP endpoints belong in the API layer (`src/api/`). Workers and background jobs (`src/workers/`) must not expose HTTP handlers directly. This separation ensures request handling, authentication, and rate limiting are consistent.

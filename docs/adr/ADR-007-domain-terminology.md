@@ -1,7 +1,11 @@
-# ADR-007: Explicit Domain Terminology
+---
+id: ADR-007
+title: Explicit Domain Terminology
+status: Active
+date: 2026-01-15
+---
 
-## Status
-Active
+# ADR-007: Explicit Domain Terminology
 
 ## Context
 Vague names like `data`, `info`, `manager`, `handler` obscure meaning. Domain language should be ubiquitous in code.

@@ -1,7 +1,11 @@
-# ADR-004: Prefer Small Modules
+---
+id: ADR-004
+title: Prefer Small Modules
+status: Active
+date: 2026-01-15
+---
 
-## Status
-Active
+# ADR-004: Prefer Small Modules
 
 ## Context
 Large modules are harder to understand, test, and change. Keeping modules focused reduces cognitive load.

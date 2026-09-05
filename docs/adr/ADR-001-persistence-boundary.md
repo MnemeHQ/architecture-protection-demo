@@ -1,7 +1,11 @@
-# ADR-001: Persistence Boundary
+---
+id: ADR-001
+title: Persistence Boundary
+status: Active
+date: 2026-01-15
+---
 
-## Status
-Active
+# ADR-001: Persistence Boundary
 
 ## Context
 Domain and API code must access PostgreSQL through the repository abstraction rather than opening database clients directly. Direct database access couples business logic to infrastructure concerns, makes testing difficult, and prevents centralized query optimization.

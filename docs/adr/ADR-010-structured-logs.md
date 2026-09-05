@@ -1,7 +1,11 @@
-# ADR-010: Structured Logs
+---
+id: ADR-010
+title: Structured Logs
+status: Active
+date: 2026-01-15
+---
 
-## Status
-Active
+# ADR-010: Structured Logs
 
 ## Context
 Unstructured logs are hard to query, alert on, and correlate. JSON logs with consistent fields enable operational visibility.

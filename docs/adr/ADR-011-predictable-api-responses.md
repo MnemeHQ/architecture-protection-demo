@@ -1,7 +1,11 @@
-# ADR-011: Predictable API Responses
+---
+id: ADR-011
+title: Predictable API Responses
+status: Active
+date: 2026-01-15
+---
 
-## Status
-Active
+# ADR-011: Predictable API Responses
 
 ## Context
 Inconsistent response shapes (sometimes arrays, sometimes objects; varying error formats) force consumers to write defensive code.

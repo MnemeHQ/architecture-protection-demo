@@ -1,7 +1,11 @@
-# ADR-008: Idempotent Background Jobs
+---
+id: ADR-008
+title: Idempotent Background Jobs
+status: Active
+date: 2026-01-15
+---
 
-## Status
-Active
+# ADR-008: Idempotent Background Jobs
 
 ## Context
 Workers may retry on failure. Non-idempotent jobs cause duplicate charges, double emails, or corrupted state.

@@ -1,7 +1,11 @@
-# ADR-002: Payment Provider Boundary
+---
+id: ADR-002
+title: Payment Provider Boundary
+status: Active
+date: 2026-01-15
+---
 
-## Status
-Active
+# ADR-002: Payment Provider Boundary
 
 ## Context
 Domain logic must not call Stripe or other payment provider SDKs directly. External payment calls must go through the payment adapter in `src/payments/`. Direct SDK usage couples business logic to vendor-specific APIs and makes provider migration costly.

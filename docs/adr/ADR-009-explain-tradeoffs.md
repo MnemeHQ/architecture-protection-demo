@@ -1,7 +1,11 @@
-# ADR-009: Explain Trade-offs in ADRs
+---
+id: ADR-009
+title: Explain Trade-offs in ADRs
+status: Active
+date: 2026-01-15
+---
 
-## Status
-Active
+# ADR-009: Explain Trade-offs in ADRs
 
 ## Context
 Decisions without recorded rationale become mysterious constraints. Future maintainers need to know *why*, not just *what*.

@@ -1,7 +1,11 @@
-# ADR-012: Favour Simple Dependencies
+---
+id: ADR-012
+title: Favour Simple Dependencies
+status: Active
+date: 2026-01-15
+---
 
-## Status
-Active
+# ADR-012: Favour Simple Dependencies
 
 ## Context
 Heavy frameworks pull in transitive dependencies, increase bundle size, and constrain architecture. Prefer standard library and small focused packages.

@@ -1,7 +1,11 @@
-# ADR-006: Document Externally Visible Behavior
+---
+id: ADR-006
+title: Document Externally Visible Behavior
+status: Active
+date: 2026-01-15
+---
 
-## Status
-Active
+# ADR-006: Document Externally Visible Behavior
 
 ## Context
 API contracts, event schemas, and error formats are the primary interface for consumers. Internal implementation details can change; the external surface must be documented.

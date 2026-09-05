@@ -1,7 +1,11 @@
-# ADR-014: Document Third-Party Failure Modes
+---
+id: ADR-014
+title: Document Third-Party Failure Modes
+status: Active
+date: 2026-01-15
+---
 
-## Status
-Active
+# ADR-014: Document Third-Party Failure Modes
 
 ## Context
 External services (payment providers, email, storage) fail in ways we can't control. Assuming they always succeed leads to silent data loss or stuck orders.
